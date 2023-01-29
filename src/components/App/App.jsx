@@ -43,10 +43,27 @@ export default function App() {
   };
 
   const onDeleteContact = contactId => {
-    setContacts(prevState => ({
-      contacts: prevState.filter(contact => contact.id !== contactId),
-    }));
+    setContacts(prevState =>
+      prevState.filter(contact => contact.id !== contactId)
+    );
   };
+
+  // changeFilter = e => {
+  //   this.setState({ filter: e.target.value });
+  // };
+  // onFilterContacts = () => {
+  //   const { filter, contacts } = this.state;
+  //   const normalizeFilter = filter.toLowerCase();
+  //   return contacts.filter(contact =>
+  //     contact.name.toLowerCase().includes(normalizeFilter)
+  //   );
+  // };
+
+  // onDeleteContact = contactId => {
+  //   this.setState(prevState => ({
+  //     contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+  //   }));
+  // };
 
   const visibleContacts = onFilterContacts();
 
